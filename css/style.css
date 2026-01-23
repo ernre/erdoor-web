@@ -121,6 +121,18 @@ body {
     border: none; /* Ensure no borders */
 }
 
+.product-text-box h2 {
+    font-family: 'Felix Titling', 'Times New Roman', serif;
+    font-weight: normal; /* Titling fonts usually don't need bold, but adjust as you like */
+    letter-spacing: 1px; /* Slight spacing looks elegant with this font */
+}
+
+/* Optional: If you want the quotes below the name to match or contrast */
+.product-text-box h4 {
+    font-family: 'Felix Titling', serif; /* Remove this line if you want quotes to stay standard */
+    font-size: 1.2rem;
+}
+
 /* 3. Slider & Icons (Kept same as before) */
 .carousel-caption {
     background: rgba(23, 32, 42, 0.6);
