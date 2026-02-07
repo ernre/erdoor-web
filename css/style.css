@@ -1,7 +1,7 @@
 :root {
-
-    --primary-color: #c0392b; 
-    --accent-color: #17202a;  
+    --primary-color: #c0392b; /* Red */
+    --accent-color: #17202a;  /* Dark (Used for Button) */
+    --cream-color: #FBE3BF;   /* New Footer Color */
 }
 
 
@@ -10,6 +10,20 @@ body {
     background-color: #ffffff;
 }
 
+.carousel-item {
+    overflow: hidden; /* Important to contain the zoom */
+}
+
+.carousel-item img {
+    transform-origin: center;
+    transition: transform 5s ease-in-out; /* Smooth 5s movement */
+    transform: scale(1.0);
+}
+
+/* When the slide is active, zoom it slightly */
+.carousel-item.active img {
+    transform: scale(1.1); 
+}
 
 .navbar {
     background-color: #ffffff !important; 
@@ -151,42 +165,17 @@ body {
 }
 
 /* 4. Button */
-.btn-primary {
-    background-color: var(--primary-color); /* Red */
-    border: 2px solid var(--primary-color);
-    color: #ffffff;
-    transition: all 0.4s ease-in-out; /* The Soft Animation */
-}
-
-.btn-primary:hover {
-    background-color: #ffffff;
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.btn-catalog {
-    background-color: var(--accent-color); /* Dark */
+.btn-accent {
+    background-color: var(--accent-color);
     border: 2px solid var(--accent-color);
     color: #ffffff;
-    font-weight: 500;
-    transition: all 0.4s ease-in-out; /* Same Animation */
+    transition: all 0.4s ease-in-out;
 }
 
-.btn-catalog:hover {
-    background-color: #ffffff; /* White background */
-    color: var(--accent-color); /* Dark Text */
-    border-color: var(--accent-color); /* Dark Border */
-}
-
-
-.btn-outline-dark {
+.btn-accent:hover {
+    background-color: transparent;
     color: var(--accent-color);
     border-color: var(--accent-color);
-}
-
-.btn-outline-dark:hover {
-    background-color: var(--accent-color);
-    color: #ffffff;
 }
 
 .font-felix {
@@ -200,4 +189,51 @@ body {
 .product-text-box h2 {
     font-family: 'Felix Titling', 'Times New Roman', serif;
     letter-spacing: 1px;
+}
+
+.bg-cream {
+    background-color: var(--cream-color);
+    color: var(--accent-color); /* Dark text */
+}
+
+.footer-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: var(--primary-color); /* Red on hover */
+}
+
+.product-text-box {
+    padding: 5rem; 
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    
+    /* 1. Fix the Image Cropping */
+    .product-img {
+        height: auto !important; /* Stop forcing 600px height */
+        min-height: 250px; /* Ensure it's not too small */
+        aspect-ratio: 4/3; /* Keeps a nice shape, or remove this line to use original image shape */
+        object-fit: contain; /* OPTIONAL: Use 'contain' to show the WHOLE image without cropping */
+        background-color: #fff; /* White background for any empty space */
+    }
+
+    /* 2. Adjust Text Padding */
+    .product-text-box {
+        padding: 2rem 1.5rem !important; /* Reduce massive padding */
+    }
+    
+    /* 3. Slider Height on Mobile */
+    .carousel-item img {
+        height: 300px !important; /* Make slider shorter on mobile */
+    }
+    
+    /* 4. Fix Title Sizes */
+    .display-4 {
+        font-size: 2.5rem; /* Smaller titles */
+    }
 }
