@@ -188,3 +188,16 @@ body {
     background-color: var(--accent-color);
     color: #ffffff;
 }
+
+.font-felix {
+    font-family: 'Felix Titling', 'Times New Roman', serif;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Felix Titling is often all-caps */
+}
+
+/* Apply to Product Names (Door Titles) */
+.product-text-box h2 {
+    font-family: 'Felix Titling', 'Times New Roman', serif;
+    letter-spacing: 1px;
+}
