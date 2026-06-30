@@ -20,9 +20,18 @@ body {
     transform: scale(1.0);
 }
 
+.hero-carousel-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1916 / 821;
+    object-fit: contain;
+    filter: brightness(0.8);
+    display: block;
+}
+
 /* When the slide is active, zoom it slightly */
 .carousel-item.active img {
-    transform: scale(1.1); 
+    transform: scale(1.0); 
 }
 
 .navbar {
@@ -230,8 +239,8 @@ body {
     }
     
     /* 3. Slider Height on Mobile */
-    .carousel-item img {
-        height: 300px !important; /* Make slider shorter on mobile */
+    .hero-carousel-img {
+        height: auto !important;
     }
     
     /* 4. Fix Title Sizes */
