@@ -23,8 +23,8 @@
     <main class="bg-white">
         <section class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-10 sm:px-6 md:py-14 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 xl:py-20">
             <div class="mx-auto w-full max-w-sm sm:max-w-md lg:max-w-[380px] xl:max-w-md">
-                <div class="aspect-[1/2] w-full overflow-hidden rounded-lg bg-gray-50 shadow-2xl shadow-gray-200/80">
-                    <img id="productImage" src="assets/gallery/kapi1.png" alt="SOHO Premium white finish door" class="h-full w-full object-cover transition-opacity duration-300">
+                <div class="aspect-[2/3] w-full overflow-hidden rounded-lg bg-gray-50 shadow-2xl shadow-gray-200/80">
+                    <img id="productImage" src="assets/gallery/beyaz-kapi.png" alt="SOHO Premium white finish door" class="h-full w-full object-cover transition-opacity duration-300">
                 </div>
             </div>
 
@@ -37,11 +37,25 @@
 
                 <div class="mt-9">
                     <h2 class="text-sm font-semibold uppercase tracking-[0.22em] text-gray-500">Select Finish</h2>
-                    <div class="mt-4 flex flex-wrap gap-4">
-                        <button type="button" class="finish-swatch h-12 w-12 rounded-full border-2 border-gray-950 bg-white shadow-sm ring-2 ring-gray-950 ring-offset-2 transition hover:scale-105" aria-label="White finish" data-image="assets/gallery/kapi1.png"></button>
-                        <button type="button" class="finish-swatch h-12 w-12 rounded-full border-2 border-white bg-[#c8a06a] shadow-sm ring-1 ring-gray-200 ring-offset-2 transition hover:scale-105" aria-label="Oak finish" data-image="assets/gallery/1.png"></button>
-                        <button type="button" class="finish-swatch h-12 w-12 rounded-full border-2 border-white bg-[#6f4528] shadow-sm ring-1 ring-gray-200 ring-offset-2 transition hover:scale-105" aria-label="Walnut finish" data-image="assets/gallery/2.png"></button>
-                        <button type="button" class="finish-swatch h-12 w-12 rounded-full border-2 border-white bg-[#34373b] shadow-sm ring-1 ring-gray-200 ring-offset-2 transition hover:scale-105" aria-label="Anthracite finish" data-image="assets/gallery/3.png"></button>
+                    <div class="mt-4 grid grid-cols-3 gap-3 sm:flex sm:flex-wrap sm:gap-4">
+                        <button type="button" class="finish-swatch h-16 w-16 overflow-hidden rounded-md bg-white shadow-sm ring-2 ring-gray-950 ring-offset-2 transition hover:-translate-y-0.5 hover:shadow-md sm:h-20 sm:w-20" aria-label="Akcaagac finish" data-door-image="assets/gallery/beyaz-kapi.png" data-color-name="Akcaagac">
+                            <img src="assets/gallery/akcaagac.png" alt="Akcaagac texture" class="h-full w-full object-cover">
+                        </button>
+                        <button type="button" class="finish-swatch h-16 w-16 overflow-hidden rounded-md bg-white shadow-sm ring-1 ring-gray-200 ring-offset-2 transition hover:-translate-y-0.5 hover:shadow-md sm:h-20 sm:w-20" aria-label="Disbudak finish" data-door-image="assets/gallery/disbudak-kapi-removebg-preview.png" data-color-name="Disbudak">
+                            <img src="assets/gallery/disbudak.png" alt="Disbudak texture" class="h-full w-full object-cover">
+                        </button>
+                        <button type="button" class="finish-swatch h-16 w-16 overflow-hidden rounded-md bg-white shadow-sm ring-1 ring-gray-200 ring-offset-2 transition hover:-translate-y-0.5 hover:shadow-md sm:h-20 sm:w-20" aria-label="Teak finish" data-door-image="assets/gallery/teak-kapi-removebg-preview.png" data-color-name="Teak">
+                            <img src="assets/gallery/teak.png" alt="Teak texture" class="h-full w-full object-cover">
+                        </button>
+                        <button type="button" class="finish-swatch h-16 w-16 overflow-hidden rounded-md bg-white shadow-sm ring-1 ring-gray-200 ring-offset-2 transition hover:-translate-y-0.5 hover:shadow-md sm:h-20 sm:w-20" aria-label="White Teak finish" data-door-image="assets/gallery/whiteteak-kapi-removebg-preview.png" data-color-name="White Teak">
+                            <img src="assets/gallery/whiteteak.png" alt="White Teak texture" class="h-full w-full object-cover">
+                        </button>
+                        <button type="button" class="finish-swatch h-16 w-16 overflow-hidden rounded-md bg-white shadow-sm ring-1 ring-gray-200 ring-offset-2 transition hover:-translate-y-0.5 hover:shadow-md sm:h-20 sm:w-20" aria-label="Italian Nut finish" data-door-image="assets/gallery/ceviz-kapi-removebg-preview.png" data-color-name="Italian Nut">
+                            <img src="assets/gallery/italian-nut.png" alt="Italian Nut texture" class="h-full w-full object-cover">
+                        </button>
+                        <button type="button" class="finish-swatch h-16 w-16 overflow-hidden rounded-md bg-white shadow-sm ring-1 ring-gray-200 ring-offset-2 transition hover:-translate-y-0.5 hover:shadow-md sm:h-20 sm:w-20" aria-label="Dark Nut finish" data-door-image="assets/gallery/koyu-ceviz-kapi-removebg-preview.png" data-color-name="Dark Nut">
+                            <img src="assets/gallery/dark-nut.png" alt="Dark Nut texture" class="h-full w-full object-cover">
+                        </button>
                     </div>
                 </div>
 
@@ -146,6 +160,8 @@
         </section>
     </main>
 
+    <div id="finishTooltip" class="pointer-events-none fixed left-0 top-0 z-50 invisible rounded-md bg-gray-950 px-3 py-2 text-xs font-semibold tracking-wide text-white opacity-0 shadow-xl transition-opacity duration-100"></div>
+
     <div id="footer-placeholder"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -153,12 +169,13 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const productImage = document.getElementById('productImage');
+            const finishTooltip = document.getElementById('finishTooltip');
             const swatches = Array.from(document.querySelectorAll('.finish-swatch'));
             let currentImage = productImage.getAttribute('src');
             let swapTimer;
 
             const activateSwatch = (swatch) => {
-                const nextImage = swatch.dataset.image;
+                const nextImage = swatch.dataset.doorImage;
                 if (!nextImage || nextImage === currentImage) return;
 
                 window.clearTimeout(swapTimer);
@@ -178,16 +195,51 @@
                 }, 150);
             };
 
+            const moveTooltip = (event, swatch) => {
+                const offset = 14;
+                const colorName = swatch.dataset.colorName || 'Finish';
+                finishTooltip.textContent = colorName;
+                finishTooltip.classList.remove('invisible', 'opacity-0');
+                finishTooltip.classList.add('opacity-100');
+
+                const tooltipWidth = finishTooltip.offsetWidth;
+                const tooltipHeight = finishTooltip.offsetHeight;
+                const maxLeft = window.innerWidth - tooltipWidth - 8;
+                const maxTop = window.innerHeight - tooltipHeight - 8;
+                const left = Math.min(Math.max(event.clientX + offset, 8), maxLeft);
+                const top = Math.min(Math.max(event.clientY + offset, 8), maxTop);
+
+                finishTooltip.style.transform = `translate3d(${left}px, ${top}px, 0)`;
+            };
+
+            const hideTooltip = () => {
+                finishTooltip.classList.add('invisible', 'opacity-0');
+                finishTooltip.classList.remove('opacity-100');
+            };
+
             swatches.forEach((swatch) => {
                 swatch.addEventListener('mouseenter', () => activateSwatch(swatch));
+                swatch.addEventListener('mousemove', (event) => {
+                    activateSwatch(swatch);
+                    moveTooltip(event, swatch);
+                });
+                swatch.addEventListener('mouseleave', hideTooltip);
                 swatch.addEventListener('pointerenter', () => activateSwatch(swatch));
+                swatch.addEventListener('pointerleave', hideTooltip);
+                swatch.addEventListener('mouseout', hideTooltip);
                 swatch.addEventListener('click', () => activateSwatch(swatch));
                 swatch.addEventListener('touchstart', () => activateSwatch(swatch), { passive: true });
             });
 
+            document.addEventListener('mousemove', (event) => {
+                if (!event.target.closest('.finish-swatch')) {
+                    hideTooltip();
+                }
+            });
+
             swatches.forEach((swatch) => {
                 const image = new Image();
-                image.src = swatch.dataset.image;
+                image.src = swatch.dataset.doorImage;
             });
         });
     </script>
