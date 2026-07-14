@@ -1,26 +1,91 @@
-<footer class="bg-cream py-5 mt-5">
+<footer>
+  <div class="footer-newsletter">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <h5 class="fw-bold text-uppercase">Decker WPC</h5>
-                <p class="small opacity-75">Innovating construction with sustainable, durable, and elegant wood plastic composites.</p>
-            </div>
-            <div class="col-md-4 mb-4">
-                <h5 class="fw-bold text-uppercase">Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="#" class="footer-link">Products</a></li>
-                    <li class="mb-2"><a href="#" class="footer-link">Catalog</a></li>
-                    <li class="mb-2"><a href="#" class="footer-link">Support</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4 mb-4">
-                <h5 class="fw-bold text-uppercase">Contact</h5>
-                <p class="small opacity-75">Istanbul, Turkey<br>info@decker.com</p>
-            </div>
+      <div class="newsletter-wrapper">
+        <div class="newsletter-text">
+          <h3>Stay Connected</h3>
+          <p>
+            Join our mailing list to receive the latest news, product updates,
+            and special offers directly to your inbox.
+          </p>
         </div>
-        <hr class="opacity-25" style="border-color: var(--accent-color);">
-        <div class="text-center small opacity-75">
-            &copy; 2026 Decker. All Rights Reserved.
-        </div>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+          <div class="input-group">
+            <input type="email" placeholder="Enter your email address" required />
+            <button type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
+
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo">
+          <img
+            src="assets/logo/logo_erdoor.png"
+            alt="ERDOOR"
+            class="img-fluid"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          />
+          <span class="text-logo-fallback" style="display: none">ERDOOR</span>
+        </a>
+        <p>
+          Manufacturer of durable, elegant WPC interior doors engineered for
+          sustainability, long-term performance, and refined modern spaces.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>PRODUCTS</h4>
+        <ul>
+          <li><a href="product-detail.html">Interior Doors</a></li>
+          <li><a href="product-detail.html">SOHO</a></li>
+          <li><a href="product-detail.html">VERA</a></li>
+          <li><a href="product-detail.html">VISTA</a></li>
+          <li><a href="product-detail.html">Baseboard</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>RESOURCES</h4>
+        <ul>
+          <li><a href="#">Why WPC Doors?</a></li>
+          <li><a href="#">Warranty Info</a></li>
+          <li><a href="#">E-Catalog</a></li>
+          <li><a href="#">Maintenance</a></li>
+          <li><a href="#">Technical Specs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>COMPANY</h4>
+        <ul>
+          <li><a href="#">About Erdoor</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="contact.html">Get a Quote</a></li>
+          <li><a href="contact.html">Request Samples</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Erdoor. All Rights Reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <span class="sep">&bull;</span>
+        <a href="#">Terms of Use</a>
+        <span class="sep">&bull;</span>
+        <span>Miami, Florida</span>
+      </div>
+    </div>
+  </div>
 </footer>
