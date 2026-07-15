@@ -12,7 +12,6 @@ function loadComponent(elementId, filePath) {
 
             if (filePath === 'header.html') {
                 initHeaderLogic();
-                initLanguageLogic();
             }
         })
         .catch(error => console.error('Error loading component:', error));
@@ -45,48 +44,6 @@ function initHeaderLogic() {
             navLinks.style.background = 'white';
             navLinks.style.padding = '20px';
             navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-        }
-    });
-}
-
-const translations = {
-    en: {
-        menu_products: 'PRODUCTS',
-        menu_resource: 'RESOURCE',
-        menu_about: 'ABOUT US',
-        menu_contact: 'CONTACT',
-        menu_faq: 'FAQ',
-    },
-    es: {
-        menu_products: 'PRODUCTOS',
-        menu_resource: 'RECURSOS',
-        menu_about: 'SOBRE NOSOTROS',
-        menu_contact: 'CONTACTO',
-        menu_faq: 'PREGUNTAS',
-    },
-};
-
-function initLanguageLogic() {
-    const langBtns = document.querySelectorAll('.lang-btn');
-
-    langBtns.forEach(btn => {
-        btn.addEventListener('click', event => {
-            event.preventDefault();
-            langBtns.forEach(item => item.classList.remove('active'));
-            btn.classList.add('active');
-            translatePage(btn.getAttribute('data-lang'));
-        });
-    });
-}
-
-function translatePage(lang) {
-    const dictionary = translations[lang];
-    if (!dictionary) return;
-
-    document.querySelectorAll('[data-key]').forEach(element => {
-        const key = element.getAttribute('data-key');
-        if (dictionary[key]) {
-            element.textContent = dictionary[key];
         }
     });
 }

@@ -663,6 +663,10 @@ footer {
     display: none;
   }
 
+  #heroCarousel {
+    margin-top: 100px;
+  }
+
   .nav-links {
     display: none;
   }
