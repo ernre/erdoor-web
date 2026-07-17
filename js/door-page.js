@@ -60,40 +60,40 @@ function renderDoorPage(config) {
         </section>
 
         <section class="mx-auto max-w-7xl border-t border-gray-200 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
-            <div class="mx-auto max-w-4xl text-center">
+            <div class="mx-auto max-w-3xl text-center">
                 <p class="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-gray-500">Technical Details</p>
                 <h2 class="font-felix text-3xl text-gray-950 sm:text-4xl">Specifications</h2>
 
-                <div class="mt-8 overflow-hidden rounded-lg text-left">
-                    <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-4 rounded-md px-4 py-3 text-sm transition hover:bg-gray-50 sm:text-base">
+                <div class="mx-auto mt-7 max-w-2xl overflow-hidden rounded-lg text-left">
+                    <div class="grid grid-cols-[minmax(120px,0.85fr)_minmax(0,1.15fr)] gap-3 rounded-md px-3 py-2.5 text-sm transition hover:bg-gray-50 sm:px-4 sm:text-base">
                         <span class="font-medium text-gray-500">Door Type</span>
                         <span class="text-right font-semibold text-gray-900">Interior Door</span>
                     </div>
-                    <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-4 rounded-md px-4 py-3 text-sm transition hover:bg-gray-50 sm:text-base">
+                    <div class="grid grid-cols-[minmax(120px,0.85fr)_minmax(0,1.15fr)] gap-3 rounded-md px-3 py-2.5 text-sm transition hover:bg-gray-50 sm:px-4 sm:text-base">
                         <span class="font-medium text-gray-500">Slab Construction</span>
                         <span class="text-right font-semibold text-gray-900">Solid Core</span>
                     </div>
-                    <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-4 rounded-md px-4 py-3 text-sm transition hover:bg-gray-50 sm:text-base">
+                    <div class="grid grid-cols-[minmax(120px,0.85fr)_minmax(0,1.15fr)] gap-3 rounded-md px-3 py-2.5 text-sm transition hover:bg-gray-50 sm:px-4 sm:text-base">
                         <span class="font-medium text-gray-500">Slab Height</span>
                         <span class="text-right font-semibold text-gray-900">80", 84", 96"</span>
                     </div>
-                    <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-4 rounded-md px-4 py-3 text-sm transition hover:bg-gray-50 sm:text-base">
+                    <div class="grid grid-cols-[minmax(120px,0.85fr)_minmax(0,1.15fr)] gap-3 rounded-md px-3 py-2.5 text-sm transition hover:bg-gray-50 sm:px-4 sm:text-base">
                         <span class="font-medium text-gray-500">Slab Width</span>
                         <span class="text-right font-semibold text-gray-900">24", 26", 28", 30", 32", 34", 36"</span>
                     </div>
-                    <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-4 rounded-md px-4 py-3 text-sm transition hover:bg-gray-50 sm:text-base">
+                    <div class="grid grid-cols-[minmax(120px,0.85fr)_minmax(0,1.15fr)] gap-3 rounded-md px-3 py-2.5 text-sm transition hover:bg-gray-50 sm:px-4 sm:text-base">
                         <span class="font-medium text-gray-500">Slab Thickness</span>
                         <span class="text-right font-semibold text-gray-900">1-5/8"</span>
                     </div>
-                    <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-4 rounded-md px-4 py-3 text-sm transition hover:bg-gray-50 sm:text-base">
+                    <div class="grid grid-cols-[minmax(120px,0.85fr)_minmax(0,1.15fr)] gap-3 rounded-md px-3 py-2.5 text-sm transition hover:bg-gray-50 sm:px-4 sm:text-base">
                         <span class="font-medium text-gray-500">Jamb Width</span>
                         <span class="text-right font-semibold text-gray-900">3-15/16" - 5-1/2" - 7-7/8"</span>
                     </div>
-                    <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-4 rounded-md px-4 py-3 text-sm transition hover:bg-gray-50 sm:text-base">
+                    <div class="grid grid-cols-[minmax(120px,0.85fr)_minmax(0,1.15fr)] gap-3 rounded-md px-3 py-2.5 text-sm transition hover:bg-gray-50 sm:px-4 sm:text-base">
                         <span class="font-medium text-gray-500">Jamb Thickness</span>
                         <span class="text-right font-semibold text-gray-900">1-3/8"</span>
                     </div>
-                    <div class="grid grid-cols-[minmax(0,1fr)_auto] gap-4 rounded-md px-4 py-3 text-sm transition hover:bg-gray-50 sm:text-base">
+                    <div class="grid grid-cols-[minmax(120px,0.85fr)_minmax(0,1.15fr)] gap-3 rounded-md px-3 py-2.5 text-sm transition hover:bg-gray-50 sm:px-4 sm:text-base">
                         <span class="font-medium text-gray-500">Casing (Adjustable)</span>
                         <span class="text-right font-semibold text-gray-900">3-1/8" - 3-15/16" - 5-7/8"</span>
                     </div>
