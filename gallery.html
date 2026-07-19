@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the Erdoor inspiration gallery featuring door designs, finishes, and interior applications.">
+  <title>Inspiration Gallery | Erdoor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css?v=20260719">
+  <link rel="stylesheet" href="css/gallery.css?v=20260719b">
+</head>
+<body class="gallery-page">
+  <div id="header-placeholder"></div>
+  <main>
+    <section class="gallery-hero">
+      <div class="container gallery-hero-content">
+        <a href="resources.html" class="gallery-back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Resources</a>
+        <p class="gallery-eyebrow">Inspiration gallery</p>
+        <h1>Doors that shape<br>the space.</h1>
+        <p>Explore Erdoor designs, natural-looking finishes, and ideas for residential and commercial interiors.</p>
+      </div>
+    </section>
+
+    <section class="gallery-section" aria-label="Erdoor inspiration photos">
+      <div class="container">
+        <div class="gallery-heading">
+          <div>
+            <p class="gallery-eyebrow">Selected designs</p>
+            <h2>Find your inspiration</h2>
+          </div>
+          <p>Click any image to explore it in detail.</p>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+        <div class="gallery-load-more">
+          <button type="button" id="loadMoreBtn">Load more photos <i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer" hidden>
+    <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close image viewer"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <button type="button" class="lightbox-arrow lightbox-arrow--prev" data-lightbox-prev aria-label="Previous image"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+    <figure>
+      <img src="" alt="" data-lightbox-image>
+      <figcaption data-lightbox-caption></figcaption>
+    </figure>
+    <button type="button" class="lightbox-arrow lightbox-arrow--next" data-lightbox-next aria-label="Next image"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

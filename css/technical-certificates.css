@@ -1,0 +1,414 @@
+.technical-page,
+.technical-page *,
+.technical-page *::before,
+.technical-page *::after {
+  box-sizing: border-box;
+}
+
+.technical-page {
+  color: #17202a;
+  background: #f7f4ef;
+}
+
+.technical-page main {
+  overflow: hidden;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.technical-hero {
+  position: relative;
+  margin-top: 100px;
+  padding: 86px 0 92px;
+  overflow: hidden;
+  color: #fff;
+  background: var(--primary-color);
+}
+
+.technical-hero::after {
+  content: "";
+  position: absolute;
+  right: -9vw;
+  bottom: -24vw;
+  width: 48vw;
+  height: 48vw;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 50%;
+}
+
+.technical-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.technical-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 52px;
+  color: rgba(255, 255, 255, 0.66);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.25s ease, gap 0.25s ease;
+}
+
+.technical-back:hover {
+  gap: 15px;
+  color: #fff;
+}
+
+.technical-eyebrow {
+  margin: 0 0 18px;
+  color: var(--accent-color);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.21em;
+  text-transform: uppercase;
+}
+
+.technical-hero h1 {
+  max-width: 1000px;
+  margin: 0;
+  color: #fff;
+  font-family: "Felix Titling", "Times New Roman", serif;
+  font-size: clamp(3rem, 6.5vw, 5.7rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+}
+
+.technical-hero p:not(.technical-eyebrow) {
+  max-width: 700px;
+  margin: 34px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.technical-library {
+  padding: 110px 0 120px;
+  background: #f7f4ef;
+}
+
+.technical-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 35px;
+}
+
+.technical-toolbar h2 {
+  margin: 0;
+  color: #17202a;
+  font-family: "Felix Titling", "Times New Roman", serif;
+  font-size: clamp(2.1rem, 4vw, 3.55rem);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.technical-search {
+  width: min(100%, 350px);
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 0 18px;
+  color: #778087;
+  background: #fff;
+  border: 1px solid #d9d3ca;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.technical-search:focus-within {
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 24px rgba(23, 32, 42, 0.08);
+}
+
+.technical-search input {
+  width: 100%;
+  height: 52px;
+  padding: 0;
+  color: #17202a;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.technical-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 42px;
+  padding-bottom: 1px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.technical-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.technical-filters button {
+  flex: 0 0 auto;
+  padding: 12px 17px;
+  color: #606a70;
+  background: transparent;
+  border: 1px solid #d3cec6;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.technical-filters button.is-active,
+.technical-filters button:hover {
+  color: #fff;
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.document-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.document-card {
+  position: relative;
+  min-width: 0;
+  min-height: 375px;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  padding: 36px 34px 32px;
+  background: #fff;
+  border: 1px solid rgba(23, 32, 42, 0.08);
+  box-shadow: 0 14px 38px rgba(23, 32, 42, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.document-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--accent-color);
+}
+
+.document-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(23, 32, 42, 0.12);
+}
+
+.document-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 42px;
+  color: #fff;
+  background: var(--primary-color);
+  border-radius: 50%;
+  font-size: 1.15rem;
+}
+
+.document-type {
+  margin: 0 0 10px !important;
+  color: var(--accent-color) !important;
+  font-family: var(--font-heading) !important;
+  font-size: 0.66rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.document-card h3 {
+  margin: 0 0 14px;
+  color: #17202a;
+  font-family: "Felix Titling", "Times New Roman", serif;
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.document-card > p:not(.document-type) {
+  margin: 0 0 28px;
+  color: #697278;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.document-actions {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 22px;
+  border-top: 1px solid #e0ddd7;
+}
+
+.document-view-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #17202a;
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.document-view-link i {
+  color: var(--accent-color);
+  transition: transform 0.25s ease;
+}
+
+.document-view-link:hover i {
+  transform: translateX(5px);
+}
+
+.document-download {
+  color: #7a8388;
+  transition: color 0.25s ease;
+}
+
+.document-download:hover,
+.document-view-link:hover {
+  color: var(--accent-color);
+}
+
+.document-empty {
+  padding: 55px;
+  text-align: center;
+  color: #687177;
+  background: #fff;
+  border: 1px solid #e0ddd7;
+}
+
+.technical-help {
+  padding: 78px 0;
+  color: #fff;
+  background: var(--primary-color);
+}
+
+.technical-help-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 55px;
+}
+
+.technical-help h2 {
+  margin: 0 0 13px;
+  color: #fff;
+  font-family: "Felix Titling", "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.technical-help p:not(.technical-eyebrow) {
+  max-width: 680px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.7;
+}
+
+.technical-help a {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 15px 0 9px;
+  color: #fff;
+  border-bottom: 2px solid var(--accent-color);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: gap 0.25s ease;
+}
+
+.technical-help a:hover {
+  gap: 22px;
+  color: #fff;
+}
+
+@media (max-width: 950px) {
+  .document-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .technical-hero {
+    padding: 62px 0 66px;
+  }
+
+  .technical-back {
+    margin-bottom: 40px;
+  }
+
+  .technical-hero h1 {
+    font-size: 2.65rem;
+    line-height: 1.03;
+  }
+
+  .technical-hero p:not(.technical-eyebrow) {
+    margin-top: 26px;
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .technical-library {
+    padding: 62px 0 76px;
+  }
+
+  .technical-toolbar,
+  .technical-help-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .technical-search,
+  .document-grid {
+    width: 100%;
+  }
+
+  .document-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .document-card {
+    min-height: 350px;
+    padding: 32px 27px 29px;
+  }
+
+  .technical-help {
+    padding: 62px 0;
+  }
+}

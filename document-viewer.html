@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Viewer | Erdoor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/catalog.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script>pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";</script>
+  <script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
+</head>
+<body>
+  <main class="fullscreen-viewer" data-pdf-viewer data-render-scale="2">
+    <div class="top-bar-controls">
+      <a href="technical-certificates.html" class="btn-exit" data-viewer-back>
+        <i class="fas fa-arrow-left"></i>
+        <span class="hide-mobile">Back to Documents</span>
+      </a>
+      <div class="title-area" data-viewer-title>ERDOOR DOCUMENT</div>
+      <a href="#" download class="btn-download-icon" data-viewer-download aria-label="Download document">
+        <i class="fas fa-download"></i>
+      </a>
+    </div>
+    <div id="loadingState">
+      <div class="spinner"></div>
+      <p>Loading Document...</p>
+    </div>
+    <div class="book-stage">
+      <div class="book-zoom-shell" id="bookZoomShell"><div id="book"></div></div>
+    </div>
+    <button id="btnPrev" class="nav-arrow left" aria-label="Previous page"><i class="fas fa-chevron-left"></i></button>
+    <button id="btnNext" class="nav-arrow right" aria-label="Next page"><i class="fas fa-chevron-right"></i></button>
+    <div class="bottom-bar-controls">
+      <div class="page-counter" id="pageCounter">Loading...</div>
+      <div class="zoom-tools">
+        <button id="btnZoomOut" aria-label="Zoom out"><i class="fas fa-minus"></i></button>
+        <button id="btnZoomIn" aria-label="Zoom in"><i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+  </main>
+  <script src="js/document-library.js"></script>
+  <script>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      const documentId = params.get("document");
+      const documentData = window.ERDOOR_DOCUMENTS.find((item) => item.id === documentId);
+      const viewer = document.querySelector("[data-pdf-viewer]");
+      const title = document.querySelector("[data-viewer-title]");
+      const download = document.querySelector("[data-viewer-download]");
+      const loading = document.getElementById("loadingState");
+
+      if (!documentData) {
+        loading.innerHTML = "<p class='flipbook-error'>This document is unavailable.</p>";
+        document.querySelectorAll(".book-stage, .nav-arrow, .bottom-bar-controls").forEach((element) => element.style.display = "none");
+        return;
+      }
+
+      document.title = `${documentData.title} | Erdoor`;
+      viewer.dataset.pdfSrc = documentData.path;
+      title.textContent = documentData.title.toUpperCase();
+      download.href = documentData.path;
+      download.setAttribute("download", "");
+    })();
+  </script>
+  <script src="js/pdf-flipbook.js"></script>
+</body>
+</html>

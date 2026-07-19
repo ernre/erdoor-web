@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse Erdoor technical documentation, product literature, test reports, certificates, and warranty files.">
+  <title>Technical &amp; Certificates | Erdoor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css?v=20260719">
+  <link rel="stylesheet" href="css/technical-certificates.css?v=20260719b">
+</head>
+<body class="technical-page">
+  <div id="header-placeholder"></div>
+  <main>
+    <section class="technical-hero">
+      <div class="container">
+        <a href="resources.html" class="technical-back"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Resources</a>
+        <p class="technical-eyebrow">Document library</p>
+        <h1>Technical &amp;<br>Certificates</h1>
+        <p>Product literature, technical information, test documentation, and supporting records&mdash;all organized in one searchable library.</p>
+      </div>
+    </section>
+
+    <section class="technical-library">
+      <div class="container">
+        <div class="technical-toolbar">
+          <div>
+            <p class="technical-eyebrow">Available documents</p>
+            <h2>Browse the library</h2>
+          </div>
+          <label class="technical-search">
+            <span class="sr-only">Search documents</span>
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input type="search" placeholder="Search documents" data-document-search>
+          </label>
+        </div>
+
+        <div class="technical-filters" aria-label="Filter document categories" data-document-filters>
+          <button type="button" class="is-active" data-category="all">All documents</button>
+          <button type="button" data-category="technical">Technical</button>
+          <button type="button" data-category="certificate">Certificates</button>
+          <button type="button" data-category="warranty">Warranty</button>
+        </div>
+
+        <div class="document-grid" data-document-grid></div>
+        <p class="document-empty" data-document-empty hidden>No documents match your search.</p>
+      </div>
+    </section>
+
+    <section class="technical-help">
+      <div class="container technical-help-inner">
+        <div>
+          <p class="technical-eyebrow">Project support</p>
+          <h2>Need a specific report?</h2>
+          <p>Ask our team for the documentation required for your market, product configuration, or project.</p>
+        </div>
+        <a href="contact.html">Request a document <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="js/main.js"></script>
+  <script src="js/document-library.js"></script>
+  <script src="js/technical-library.js"></script>
+</body>
+</html>

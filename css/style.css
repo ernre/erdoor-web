@@ -17,6 +17,7 @@
 
 
 body {
+    margin: 0;
     font-family: var(--font-body);
     color: var(--text-color);
     background-color: #ffffff;
@@ -439,17 +440,17 @@ body {
 
 footer {
   padding-top: 0 !important;
-  background-color: #d8b58a;
-  color: #3f2a1d;
+  background-color: #111820;
+  color: #e8ebed;
   padding: 50px 0 20px;
   font-size: 0.85rem;
   margin-top: auto;
 }
 
 .footer-newsletter {
-  background-color: #c99f6d;
+  background-color: #1b2732;
   padding: 50px 0;
-  border-bottom: 1px solid rgba(63, 42, 29, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
 }
 
 .footer-top {
@@ -458,7 +459,14 @@ footer {
   grid-template-columns: 1.5fr 1fr 1fr 1fr;
   gap: 30px;
   padding-bottom: 10px;
-  border-bottom: 1px solid rgba(63, 42, 29, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+  display: inline-flex;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 6px;
 }
 
 .footer-logo img {
@@ -471,8 +479,26 @@ footer {
   transform: scale(1.05);
 }
 
+.footer-group-affiliation {
+  margin: 10px 0 14px;
+}
+
+.footer-group-affiliation img {
+  display: block;
+  width: 145px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.footer-brand-col .footer-group-affiliation p {
+  margin: 5px 0 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
 .text-logo-fallback {
-  color: #3f2a1d;
+  color: #17202a;
   font-weight: 800;
   font-size: 1.5rem;
   letter-spacing: 2px;
@@ -493,12 +519,12 @@ footer {
 .social-links a {
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: #3f2a1d;
+  color: #f4f5f6;
   transition: all 0.3s ease;
   text-decoration: none;
 }
@@ -510,7 +536,7 @@ footer {
 }
 
 .footer-col h4 {
-  color: #3f2a1d;
+  color: #ffffff;
   font-size: 1rem;
   margin-bottom: 25px;
   font-weight: 700;
@@ -540,7 +566,7 @@ footer {
 }
 
 .footer-col ul li a {
-  color: rgba(63, 42, 29, 0.76);
+  color: rgba(232, 235, 237, 0.7);
   transition: all 0.3s ease;
   display: inline-block;
   text-decoration: none;
@@ -563,6 +589,7 @@ footer {
 
 .footer-bottom p {
   margin: 0;
+  color: rgba(232, 235, 237, 0.72);
 }
 
 .footer-legal {
@@ -572,23 +599,23 @@ footer {
 }
 
 .footer-legal a {
-  color: rgba(63, 42, 29, 0.72);
+  color: rgba(232, 235, 237, 0.68);
   text-decoration: none;
 }
 
 .footer-legal a:hover {
-  color: #3f2a1d;
+  color: #ffffff;
   text-decoration: underline;
 }
 
 .footer-legal .sep {
-  color: rgba(63, 42, 29, 0.42);
+  color: rgba(232, 235, 237, 0.3);
 }
 
 .newsletter-form .input-group {
   display: flex;
-  background: rgba(255, 255, 255, 0.32);
-  border: 1px solid rgba(63, 42, 29, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 50px;
   padding: 5px;
   width: 100%;
@@ -598,21 +625,22 @@ footer {
 
 .newsletter-form .input-group:focus-within {
   border-color: var(--accent-color);
-  background: rgba(255, 255, 255, 0.46);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .newsletter-form input {
   flex: 1;
+  min-width: 0;
   background: transparent;
   border: none;
   padding: 10px 20px;
-  color: #3f2a1d;
+  color: #ffffff;
   font-size: 0.95rem;
   outline: none;
 }
 
 .newsletter-form input::placeholder {
-  color: rgba(63, 42, 29, 0.58);
+  color: rgba(232, 235, 237, 0.5);
 }
 
 .newsletter-form button {
@@ -630,10 +658,10 @@ footer {
 }
 
 .newsletter-form button:hover {
-  background: #fff7ee;
+  background: #ffffff;
   color: var(--accent-color);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(63,42,29,0.24);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.24);
 }
 
 .newsletter-wrapper {
@@ -645,14 +673,14 @@ footer {
 }
 
 .newsletter-text h3 {
-  color: #3f2a1d;
+  color: #ffffff;
   font-size: 1.5rem;
   margin-bottom: 8px;
   letter-spacing: -0.5px;
 }
 
 .newsletter-text p {
-  color: rgba(63, 42, 29, 0.76);
+  color: rgba(232, 235, 237, 0.7);
   margin: 0;
   font-size: 0.95rem;
   max-width: 500px;
