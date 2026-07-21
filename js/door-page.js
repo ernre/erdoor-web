@@ -1,7 +1,7 @@
 const ERDOOR_FINISHES = [
-    { name: 'Maple Wood', colorImage: 'assets/colors/maplewoodcolor.jpg', key: 'maple' },
+    { name: 'Straight White', colorImage: 'assets/colors/Straight-White.png', key: 'straightWhite' },
     { name: 'Ash Wood', colorImage: 'assets/colors/ashwoodcolor.avif', key: 'ash' },
-    { name: 'Anthracite', colorImage: 'assets/colors/Antrasit-renk.jpg', key: 'anthracite' },
+    { name: 'Blue Slate', colorImage: 'assets/colors/blue-slate.png', key: 'blueSlate' },
     { name: 'White Teak', colorImage: 'assets/colors/whiteteakcolor.avif', key: 'whiteTeak' },
     { name: 'Italian Chestnut', colorImage: 'assets/colors/italian-nut.png', key: 'italianChestnut' },
     { name: 'Dark Chestnut', colorImage: 'assets/colors/dark-nut.png', key: 'darkChestnut' },
@@ -35,7 +35,7 @@ function renderDoorPage(config) {
         <section class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-10 sm:px-6 md:py-14 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 xl:py-20">
             <div class="mx-auto w-full max-w-sm sm:max-w-md lg:max-w-[380px] xl:max-w-md">
                 <div class="aspect-[2/3] w-full overflow-hidden rounded-lg bg-gray-50 shadow-2xl shadow-gray-200/80">
-                    <img id="productImage" src="${config.images.maple}" alt="${config.name} Premium maple finish door" class="h-full w-full object-contain transition-opacity duration-300">
+                    <img id="productImage" src="${config.images.straightWhite}" alt="${config.name} Premium Straight White finish door" class="h-full w-full object-contain transition-opacity duration-300">
                 </div>
             </div>
 
@@ -60,11 +60,12 @@ function renderDoorPage(config) {
         </section>
 
         <section class="mx-auto max-w-7xl border-t border-gray-200 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
-            <div class="mx-auto max-w-3xl text-center">
+            <div class="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.8fr)] lg:gap-16 xl:gap-24">
+                <div class="w-full">
                 <p class="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-gray-500">Technical Details</p>
                 <h2 class="font-felix text-3xl text-gray-950 sm:text-4xl">Specifications</h2>
 
-                <div class="mx-auto mt-7 max-w-2xl overflow-hidden rounded-lg text-left">
+                <div class="mt-7 w-full overflow-hidden rounded-lg text-left">
                     <div class="grid grid-cols-[minmax(120px,0.85fr)_minmax(0,1.15fr)] gap-3 rounded-md px-3 py-2.5 text-sm transition hover:bg-gray-50 sm:px-4 sm:text-base">
                         <span class="font-medium text-gray-500">Door Type</span>
                         <span class="text-right font-semibold text-gray-900">Interior Door</span>
@@ -98,11 +99,10 @@ function renderDoorPage(config) {
                         <span class="text-right font-semibold text-gray-900">3-1/8" - 3-15/16" - 5-7/8"</span>
                     </div>
                 </div>
-            </div>
+                </div>
 
-            <div class="mt-12 flex flex-wrap justify-center gap-8">
-                <button type="button" class="detail-lightbox-trigger group w-full max-w-sm overflow-hidden rounded-lg bg-gray-100 shadow-xl shadow-gray-200/70 transition hover:-translate-y-1 hover:shadow-2xl md:basis-[calc(33.333%-1.5rem)]" data-lightbox-src="assets/gallery/kapi-ozellik.png" aria-label="Open technical feature diagram">
-                    <img src="assets/gallery/kapi-ozellik.png" alt="${config.name} Premium technical feature diagram" class="aspect-[4/3] h-full w-full object-cover transition duration-300 group-hover:scale-105">
+                <button type="button" class="detail-lightbox-trigger group mx-auto block w-full max-w-[430px] overflow-hidden rounded-lg bg-gray-50 shadow-xl shadow-gray-200/70 transition hover:-translate-y-1 hover:shadow-2xl lg:mx-0 lg:justify-self-end" data-lightbox-src="assets/gallery/kapi-ozellik.png" aria-label="Open technical feature diagram">
+                    <img src="assets/gallery/kapi-ozellik.png" alt="${config.name} Premium technical feature diagram" class="block h-auto w-full object-contain transition duration-300 group-hover:scale-[1.02]">
                 </button>
             </div>
         </section>

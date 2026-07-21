@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentPage = 1;
   let baseBookWidth = 0;
   let baseBookHeight = 0;
+  let isSinglePage = false;
+  let isLandscapeDocument = false;
   let isPanning = false;
   let panStartX = 0;
   let panStartY = 0;
@@ -38,11 +40,16 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!pdfPath) throw new Error("Missing PDF path.");
 
       pdfDoc = await pdfjsLib.getDocument(pdfPath).promise;
+      isSinglePage = pdfDoc.numPages === 1;
       if (isMobileViewer) {
         createMobileReader();
       } else {
         createPageSkeleton(pdfDoc.numPages);
-        createFlipBook();
+        if (isSinglePage) {
+          await createSinglePageViewer();
+        } else {
+          await createFlipBook();
+        }
       }
       await renderAround(1);
       if (loadingState) loadingState.style.display = "none";
@@ -106,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function createFlipBook() {
+  async function createFlipBook() {
     const stageRect = bookStage?.getBoundingClientRect();
     const stageStyles = bookStage ? getComputedStyle(bookStage) : null;
     const horizontalPadding =
@@ -123,8 +130,13 @@ document.addEventListener("DOMContentLoaded", () => {
       360,
       (stageRect?.height || window.innerHeight) - verticalPadding
     );
-    const pageAspectRatio = 0.707;
-    const spreadPages = 2;
+    const firstPage = await pdfDoc.getPage(1);
+    const naturalViewport = firstPage.getViewport({ scale: 1 });
+    const pageAspectRatio = naturalViewport.width / naturalViewport.height;
+    isLandscapeDocument = pageAspectRatio > 1;
+    const spreadPages = isLandscapeDocument ? 1 : 2;
+
+    viewer.classList.toggle("is-landscape-document", isLandscapeDocument);
 
     let pageHeight = availableHeight * 0.96;
     let pageWidth = pageHeight * pageAspectRatio;
@@ -142,8 +154,8 @@ document.addEventListener("DOMContentLoaded", () => {
       maxWidth: 1600,
       minHeight: 300,
       maxHeight: 2200,
-      showCover: true,
-      usePortrait: false,
+      showCover: !isLandscapeDocument,
+      usePortrait: isLandscapeDocument,
       maxShadowOpacity: 0.45,
       mobileScrollSupport: false,
       flippingTime: 700,
@@ -161,6 +173,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (prevBtn) prevBtn.addEventListener("click", () => pageFlip.flipPrev());
     if (nextBtn) nextBtn.addEventListener("click", () => pageFlip.flipNext());
+    if (zoomInBtn) zoomInBtn.addEventListener("click", () => setZoom(0.1));
+    if (zoomOutBtn) zoomOutBtn.addEventListener("click", () => setZoom(-0.1));
+    addZoomNavigation();
+  }
+
+  async function createSinglePageViewer() {
+    viewer.classList.add("is-single-page");
+
+    const stageRect = bookStage?.getBoundingClientRect();
+    const stageStyles = bookStage ? getComputedStyle(bookStage) : null;
+    const horizontalPadding =
+      parseFloat(stageStyles?.paddingLeft || 0) +
+      parseFloat(stageStyles?.paddingRight || 0);
+    const verticalPadding =
+      parseFloat(stageStyles?.paddingTop || 0) +
+      parseFloat(stageStyles?.paddingBottom || 0);
+    const availableWidth = Math.max(
+      280,
+      (stageRect?.width || window.innerWidth) - horizontalPadding
+    );
+    const availableHeight = Math.max(
+      360,
+      (stageRect?.height || window.innerHeight) - verticalPadding
+    );
+    const firstPage = await pdfDoc.getPage(1);
+    const naturalViewport = firstPage.getViewport({ scale: 1 });
+    const pageAspectRatio = naturalViewport.width / naturalViewport.height;
+
+    let pageHeight = availableHeight * 0.96;
+    let pageWidth = pageHeight * pageAspectRatio;
+
+    if (pageWidth > availableWidth * 0.96) {
+      pageWidth = availableWidth * 0.96;
+      pageHeight = pageWidth / pageAspectRatio;
+    }
+
+    const page = bookElement.querySelector(".page-wrapper");
+    page.style.width = `${Math.floor(pageWidth)}px`;
+    page.style.height = `${Math.floor(pageHeight)}px`;
+    bookElement.style.width = `${Math.floor(pageWidth)}px`;
+    bookElement.style.height = `${Math.floor(pageHeight)}px`;
+    baseBookWidth = Math.floor(pageWidth);
+    baseBookHeight = Math.floor(pageHeight);
+    applyZoom();
+
+    if (prevBtn) prevBtn.hidden = true;
+    if (nextBtn) nextBtn.hidden = true;
     if (zoomInBtn) zoomInBtn.addEventListener("click", () => setZoom(0.1));
     if (zoomOutBtn) zoomOutBtn.addEventListener("click", () => setZoom(-0.1));
     addZoomNavigation();
@@ -226,8 +285,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateCounter(pageNumber) {
     if (!pageCounter || !pdfDoc) return;
     const total = pageFlip ? pageFlip.getPageCount() : pdfDoc.numPages;
-    pageCounter.innerText =
-      pageNumber === 1 ? `Cover / ${total}` : `Page ${pageNumber} of ${total}`;
+    pageCounter.innerText = isSinglePage
+      ? "Page 1 of 1"
+      : pageNumber === 1 && !isLandscapeDocument
+        ? `Cover / ${total}`
+        : `Page ${pageNumber} of ${total}`;
   }
 
   function setZoom(delta) {
@@ -365,4 +427,3 @@ document.addEventListener("DOMContentLoaded", () => {
     bookStage.dataset.zoom = String(currentZoom);
   }
 });
-

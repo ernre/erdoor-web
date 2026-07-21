@@ -1,21 +1,21 @@
 const ERDOOR_RELATED_POOL = {
     soho: {
         name: 'SOHO',
-        image: 'assets/products/soho.jpg',
+        image: 'assets/products/soho-mainpage.png',
         href: 'soho-door.html',
         objectClass: 'object-right',
         description: 'A flawless surface and elegant simplicity for sophisticated modern spaces.',
     },
     vera: {
         name: 'VERA',
-        image: 'assets/products/vera.jpg',
+        image: 'assets/products/vera-homepage.png',
         href: 'vera-door.html',
         objectClass: 'object-right',
         description: 'A prestigious profile with balanced lines and timeless interior presence.',
     },
     vista: {
         name: 'VISTA',
-        image: 'assets/products/vista.jpg',
+        image: 'assets/products/vista-homepage.png',
         href: 'vista-door.html',
         description: 'A clean modern door enhanced with a sleek detail line for refined spaces.',
     },
@@ -28,7 +28,7 @@ const ERDOOR_RELATED_POOL = {
     },
     vouge: {
         name: 'VOUGE',
-        image: 'assets/products/vouage kapi.jpg',
+        image: 'assets/products/vouge-homepage.png',
         href: 'vouge-door.html',
         description: 'Defined lines and balanced proportions enhance the perception of space.',
     },
@@ -50,7 +50,14 @@ const ERDOOR_DOORS = {
     soho: {
         name: 'SOHO',
         description: 'With the flawless surface and elegant simplicity, SOHO transforms living spaces into a sophisticated and elite atmosphere. Its timeless minimalism seamlessly integrates with any interior design.',
-        images: doorImages('Soho', 'Soho'),
+        images: {
+            straightWhite: 'assets/doors/Soho/Soho-StraightWhite.png',
+            ash: 'assets/doors/Soho/Soho-AshWood.png',
+            blueSlate: 'assets/doors/Soho/Soho-BlueSlate.png',
+            whiteTeak: 'assets/doors/Soho/Soho-WhiteTeak.png',
+            italianChestnut: 'assets/doors/Soho/Soho-Chestnut.png',
+            darkChestnut: 'assets/doors/Soho/Soho-DarkChestnut.png',
+        },
         relatedKeys: ['vera', 'vista', 'zen'],
     },
     vera: {
@@ -74,35 +81,42 @@ const ERDOOR_DOORS = {
     zen: {
         name: 'ZEN',
         description: 'The design gives the door a distinctive character, while balanced lines and coherent planes create a smooth rhythm within the space. Thoughtfully crafted details make the door a feature that enhances both visual appeal and spatial experience.',
-        images: doorImages('Zen', 'Zen'),
+        images: {
+            straightWhite: 'assets/doors/Zen/Zen-StraightWhite.png',
+            ash: 'assets/doors/Zen/Zen-Ashwood.png',
+            blueSlate: 'assets/doors/Zen/Zen-BlueSlate.png',
+            whiteTeak: 'assets/doors/Zen/Zen-WhiteTeak.png',
+            italianChestnut: 'assets/doors/Zen/Zen-ItalianChestnut.png',
+            darkChestnut: 'assets/doors/Zen/Zen-DarkChestnut.png',
+        },
         relatedKeys: ['soho', 'vista', 'luna'],
     },
     luna: {
         name: 'LUNA',
         description: 'Its refined movement system gently orchestrates the rhythm of the space. Opening with a sense of expansion and closing with impeccable visual continuity, Luna becomes a silent architectural signature rather than a mere door.',
-        images: {
-            maple: 'assets/doors/Luna/Luna-Maple.png',
-            ash: 'assets/doors/Luna/Luna-AshWood.png',
-            anthracite: 'assets/doors/Luna/Luna-Anthracite.png',
-            whiteTeak: 'assets/doors/Luna/Luna-WhiteTeak.png',
-            italianChestnut: 'assets/doors/Luna/Luna-ItalianChestnut.png',
-            darkChestnut: 'assets/doors/Luna/Luna-DarkChestnut.png',
-        },
+        images: doorImages('Luna', 'Luna'),
         relatedKeys: ['soho', 'vista', 'zen'],
     },
     signatura: {
         name: 'SIGNATURA',
         description: 'SIGNATURA merges advanced protection with refined aesthetic. Its fire-resistant design instills a sense of security, while its elegant form adds a quiet touch of prestige to any interior.',
-        images: doorImages('Signatura', 'Signatura'),
+        images: {
+            straightWhite: 'assets/doors/Signatura/Signature-StraightWhite.png',
+            ash: 'assets/doors/Signatura/Signatura-AshWood.png',
+            blueSlate: 'assets/doors/Signatura/Signature-BlueSlate.png',
+            whiteTeak: 'assets/doors/Signatura/Signatura-WhiteTeak.png',
+            italianChestnut: 'assets/doors/Signatura/Signatura-ItalianChestnut.png',
+            darkChestnut: 'assets/doors/Signatura/Signatura-DarkChestnut.png',
+        },
         relatedKeys: ['soho', 'vera', 'luna'],
     },
 };
 
 function doorImages(folder, prefix) {
     return {
-        maple: `assets/doors/${folder}/${prefix}-MapleWood.png`,
+        straightWhite: `assets/doors/${folder}/${prefix}-StraightWhite.png`,
         ash: `assets/doors/${folder}/${prefix}-AshWood.png`,
-        anthracite: `assets/doors/${folder}/${prefix}-Anthracite.png`,
+        blueSlate: `assets/doors/${folder}/${prefix}-BlueSlate.png`,
         whiteTeak: `assets/doors/${folder}/${prefix}-WhiteTeak.png`,
         italianChestnut: `assets/doors/${folder}/${prefix}-ItalianChestnut.png`,
         darkChestnut: `assets/doors/${folder}/${prefix}-DarkChestnut.png`,

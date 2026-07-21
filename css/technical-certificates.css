@@ -188,21 +188,22 @@
 
 .document-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 26px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .document-card {
   position: relative;
   min-width: 0;
-  min-height: 375px;
+  min-height: 310px;
   display: flex;
   overflow: hidden;
   flex-direction: column;
-  padding: 36px 34px 32px;
+  padding: 26px 22px 24px;
   background: #fff;
   border: 1px solid rgba(23, 32, 42, 0.08);
   box-shadow: 0 14px 38px rgba(23, 32, 42, 0.06);
+  text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -224,7 +225,7 @@
   height: 58px;
   display: grid;
   place-items: center;
-  margin-bottom: 42px;
+  margin-bottom: 28px;
   color: #fff;
   background: var(--primary-color);
   border-radius: 50%;
@@ -245,23 +246,23 @@
   margin: 0 0 14px;
   color: #17202a;
   font-family: "Felix Titling", "Times New Roman", serif;
-  font-size: 1.55rem;
+  font-size: 1.12rem;
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
 .document-card > p:not(.document-type) {
   margin: 0 0 28px;
   color: #697278;
-  font-size: 0.88rem;
-  line-height: 1.7;
+  font-size: 0.78rem;
+  line-height: 1.55;
 }
 
 .document-actions {
   margin-top: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 15px;
   padding-top: 22px;
   border-top: 1px solid #e0ddd7;
@@ -356,6 +357,12 @@
 .technical-help a:hover {
   gap: 22px;
   color: #fff;
+}
+
+@media (max-width: 1180px) {
+  .document-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 950px) {

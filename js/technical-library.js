@@ -16,16 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     grid.innerHTML = documents.map((item) => `
-      <article class="document-card">
+      <a class="document-card" href="document-viewer.html?document=${encodeURIComponent(item.id)}" aria-label="Open ${item.title}">
         <div class="document-icon"><i class="fa-solid ${item.icon}" aria-hidden="true"></i></div>
         <p class="document-type">${item.type}</p>
         <h3>${item.title}</h3>
         <p>${item.description}</p>
         <div class="document-actions">
-          <a href="document-viewer.html?document=${encodeURIComponent(item.id)}" class="document-view-link">Open flipbook <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          <a href="${item.path}" download class="document-download" aria-label="Download ${item.title}"><i class="fa-solid fa-download" aria-hidden="true"></i></a>
+          <span class="document-view-link">Open document <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
         </div>
-      </article>
+      </a>
     `).join("");
 
     if (empty) empty.hidden = documents.length > 0;
