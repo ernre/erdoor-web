@@ -743,11 +743,6 @@ footer {
     font-size: 0.63rem;
   }
 
-  .home-page .home-benefits-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    row-gap: 1.25rem !important;
-  }
-
   .home-page .door-comparison-layout {
     grid-template-columns: minmax(8.5rem, 0.65fr) minmax(19rem, 1.25fr) minmax(8.5rem, 0.65fr) !important;
   }
