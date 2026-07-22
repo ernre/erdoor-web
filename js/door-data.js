@@ -100,6 +100,14 @@ const ERDOOR_DOORS = {
     signatura: {
         name: 'SIGNATURA',
         description: 'SIGNATURA merges advanced protection with refined aesthetic. Its fire-resistant design instills a sense of security, while its elegant form adds a quiet touch of prestige to any interior.',
+        detailImage: 'assets/products/FireResistantDoor.jpg',
+        certifications: [
+            { image: 'assets/certifications/fd30-fire-rated.png', alt: 'FD30 fire rated' },
+            { image: 'assets/certifications/iso-9001-2015.png', alt: 'ISO 9001:2015' },
+            { image: 'assets/certifications/ce-mark.png', alt: 'CE mark', imageClass: 'grayscale contrast-200' },
+            { image: 'assets/certifications/ila-cmr-mark.png', alt: 'ILA CMR mark' },
+            { image: 'assets/certifications/tse-mark.png', alt: 'TSE mark' },
+        ],
         images: {
             straightWhite: 'assets/doors/Signatura/Signature-StraightWhite.png',
             ash: 'assets/doors/Signatura/Signatura-AshWood.png',

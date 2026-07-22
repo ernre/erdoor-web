@@ -1,7 +1,7 @@
 const ERDOOR_FINISHES = [
     { name: 'Straight White', colorImage: 'assets/colors/Straight-White.png', key: 'straightWhite' },
     { name: 'Ash Wood', colorImage: 'assets/colors/ashwoodcolor.avif', key: 'ash' },
-    { name: 'Blue Slate', colorImage: 'assets/colors/blue-slate.png', key: 'blueSlate' },
+    { name: 'Anthracite', colorImage: 'assets/colors/blue-slate.png', key: 'blueSlate' },
     { name: 'White Teak', colorImage: 'assets/colors/whiteteakcolor.avif', key: 'whiteTeak' },
     { name: 'Italian Chestnut', colorImage: 'assets/colors/italian-nut.png', key: 'italianChestnut' },
     { name: 'Dark Chestnut', colorImage: 'assets/colors/dark-nut.png', key: 'darkChestnut' },
@@ -31,6 +31,27 @@ function renderDoorPage(config) {
         </article>
     `).join('');
 
+    const certificationSection = config.certifications ? `
+        <section class="border-y border-gray-200 bg-gray-50/70">
+            <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+                <div class="grid gap-8 lg:grid-cols-[minmax(240px,0.7fr)_minmax(0,1.3fr)] lg:items-center lg:gap-16">
+                    <div>
+                        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-[#c0392b]">Fire-Resistant WPC Door</p>
+                        <h2 class="font-felix text-3xl text-gray-950 sm:text-4xl">Performance &amp; Standards</h2>
+                        <p class="mt-4 max-w-lg text-sm leading-relaxed text-gray-600 sm:text-base">SIGNATURA pairs refined design with tested fire-resistant performance and recognized quality standards.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4" aria-label="SIGNATURA certifications and standards">
+                        ${config.certifications.map((certification) => `
+                            <div class="flex min-h-32 items-center justify-center rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:min-h-36">
+                                <img src="${certification.image}" alt="${certification.alt}" class="h-20 w-full object-contain sm:h-24 ${certification.imageClass || ''}" loading="lazy">
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+        </section>
+    ` : '';
+
     root.innerHTML = `
         <section class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-10 sm:px-6 md:py-14 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 xl:py-20">
             <div class="mx-auto w-full max-w-sm sm:max-w-md lg:max-w-[380px] xl:max-w-md">
@@ -58,6 +79,8 @@ function renderDoorPage(config) {
                 </div>
             </div>
         </section>
+
+        ${certificationSection}
 
         <section class="mx-auto max-w-7xl border-t border-gray-200 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
             <div class="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.8fr)] lg:gap-16 xl:gap-24">
@@ -101,8 +124,8 @@ function renderDoorPage(config) {
                 </div>
                 </div>
 
-                <button type="button" class="detail-lightbox-trigger group mx-auto block w-full max-w-[430px] overflow-hidden rounded-lg bg-gray-50 shadow-xl shadow-gray-200/70 transition hover:-translate-y-1 hover:shadow-2xl lg:mx-0 lg:justify-self-end" data-lightbox-src="assets/gallery/kapi-ozellik.png" aria-label="Open technical feature diagram">
-                    <img src="assets/gallery/kapi-ozellik.png" alt="${config.name} Premium technical feature diagram" class="block h-auto w-full object-contain transition duration-300 group-hover:scale-[1.02]">
+                <button type="button" class="detail-lightbox-trigger group mx-auto block w-full max-w-[430px] overflow-hidden rounded-lg bg-gray-50 shadow-xl shadow-gray-200/70 transition hover:-translate-y-1 hover:shadow-2xl lg:mx-0 lg:justify-self-end" data-lightbox-src="${config.detailImage || 'assets/gallery/kapi-ozellik.png'}" aria-label="Open technical feature diagram">
+                    <img src="${config.detailImage || 'assets/gallery/kapi-ozellik.png'}" alt="${config.name} Premium technical feature diagram" class="block h-auto w-full object-contain transition duration-300 group-hover:scale-[1.02]">
                 </button>
             </div>
         </section>
