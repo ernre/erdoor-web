@@ -980,7 +980,7 @@ footer {
 @media (max-width: 768px) {
   .wpc-benefits-heading { display: block; }
   .wpc-benefits-heading > p { margin-top: 24px; }
-  .wpc-benefit-grid { grid-template-columns: 1fr; }
+  .wpc-benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .wpc-benefit-card { min-height: 0; }
 }
 
@@ -993,7 +993,13 @@ footer {
   .wpc-hero-product > img { max-width: 220px; max-height: 350px; }
   .wpc-product-note { right: 0; bottom: 22px; }
   .wpc-introduction, .wpc-benefits, .wpc-comparison { padding: 68px 0 74px; }
-  .wpc-benefit-card { grid-template-columns: 1fr; gap: 20px; padding: 30px 24px 34px; }
+  .wpc-benefit-grid { gap: 0; }
+  .wpc-benefit-card { grid-template-columns: 1fr; gap: 12px; padding: 20px 14px 22px; }
+  .wpc-benefit-icon { width: 48px; height: 48px; }
+  .wpc-benefit-icon img { width: 34px; height: 34px; }
+  .wpc-benefit-card span { margin-bottom: 8px; font-size: .58rem; }
+  .wpc-benefit-card h3 { margin-bottom: 10px; font-size: .78rem; line-height: 1.35; }
+  .wpc-benefit-card p { font-size: .72rem; line-height: 1.48; }
 }
 
 /* About page */

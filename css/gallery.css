@@ -364,7 +364,25 @@ body.lightbox-open {
   }
 
   .gallery-grid {
-    column-count: 1;
+    column-count: 2;
+    column-gap: 10px;
+  }
+
+  .gallery-item {
+    margin-bottom: 10px;
+    border-radius: 3px;
+    box-shadow: 0 8px 20px rgba(23, 32, 42, 0.08);
+  }
+
+  .gallery-item img {
+    min-height: 118px;
+  }
+
+  .gallery-item span {
+    left: 11px;
+    bottom: 10px;
+    font-size: 0.55rem;
+    letter-spacing: 0.07em;
   }
 
   .gallery-lightbox {

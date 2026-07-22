@@ -1,20 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
   const images = [
-    { src: "assets/gallery/soho.jpg", alt: "Soho interior door in a contemporary space", label: "Soho" },
-    { src: "assets/gallery/vista.jpg", alt: "Vista interior door design", label: "Vista" },
-    { src: "assets/gallery/vouage kapi.jpg", alt: "Vouge interior door design", label: "Vouge" },
-    { src: "assets/gallery/zen.jpg", alt: "Zen interior door design", label: "Zen" },
-    { src: "assets/gallery/signatura.jpg", alt: "Signatura interior door design", label: "Signatura" },
-    { src: "assets/gallery/vera.jpg", alt: "Vera interior door design", label: "Vera" },
-    { src: "assets/gallery/luna.jpg", alt: "Luna interior door design", label: "Luna" },
-    { src: "assets/gallery/4.jpg", alt: "Erdoor interior project inspiration", label: "Project inspiration" },
-    { src: "assets/gallery/baseboard.jpg", alt: "Erdoor coordinated baseboard finish", label: "Coordinated details" },
-    { src: "assets/gallery/beyaz-kapi.png", alt: "White Erdoor interior door", label: "White finish" },
-    { src: "assets/gallery/maplewood-kapi.png", alt: "Erdoor door in maple wood finish", label: "Maple wood" },
-    { src: "assets/gallery/whiteteak-kapi-removebg-preview.png", alt: "Erdoor door in white teak finish", label: "White teak" },
-    { src: "assets/gallery/ceviz-kapi-removebg-preview.png", alt: "Erdoor door in walnut finish", label: "Walnut" },
-    { src: "assets/gallery/disbudak-kapi-removebg-preview.png", alt: "Erdoor door in ash wood finish", label: "Ash wood" },
-    { src: "assets/gallery/koyu-ceviz-kapi-removebg-preview.png", alt: "Erdoor door in dark walnut finish", label: "Dark walnut" }
+    { src: "assets/carousel/slider.png", alt: "Erdoor premium composite door collection presentation", label: "Collection presentation", category: "fairs" },
+    { src: "assets/carousel/carousel-image-fire-rated.png", alt: "Erdoor fire-rated door exhibition presentation", label: "Fire-rated presentation", category: "fairs" },
+    { src: "assets/carousel/tall-door.png", alt: "Erdoor tall door product presentation", label: "Tall door presentation", category: "fairs" },
+    { src: "assets/carousel/wider-locations.png", alt: "Erdoor wide opening product presentation", label: "Wide opening presentation", category: "fairs" },
+    { src: "assets/gallery/soho.jpg", alt: "Soho door exhibition display", label: "Soho display", category: "doors" },
+    { src: "assets/gallery/vista.jpg", alt: "Vista door exhibition display", label: "Vista display", category: "doors" },
+    { src: "assets/gallery/vouage kapi.jpg", alt: "Vouge door exhibition display", label: "Vouge display", category: "doors" },
+    { src: "assets/gallery/zen.jpg", alt: "Zen door exhibition display", label: "Zen display", category: "doors" },
+    { src: "assets/gallery/signatura.jpg", alt: "Signatura fire-resistant door exhibition display", label: "Signatura display", category: "doors" },
+    { src: "assets/gallery/vera.jpg", alt: "Vera door exhibition display", label: "Vera display", category: "doors" },
+    { src: "assets/gallery/luna.jpg", alt: "Luna door exhibition display", label: "Luna display", category: "doors" },
+    { src: "assets/gallery/4.jpg", alt: "Erdoor doors installed in a coordinated interior", label: "Interior application", category: "doors" },
+    { src: "assets/gallery/baseboard.jpg", alt: "Erdoor coordinated baseboard product display", label: "Baseboard display", category: "doors" },
+    { src: "assets/about-us/Turkiye-fabrika.JPG", alt: "Ergünbaş Group production facility in Türkiye", label: "Türkiye production campus", category: "group" },
+    { src: "assets/about-us/cezayir-fabrika.JPG", alt: "Ergünbaş Group production facility in Algeria", label: "Algeria production campus", category: "group" }
   ];
 
   const batchSize = 6;
