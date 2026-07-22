@@ -1343,3 +1343,282 @@ footer {
   .about-company-logos { grid-template-columns: 1fr; gap: 42px; margin: 32px auto 50px; padding-top: 30px; }
   .about-logo-card img { max-height: 72px; }
 }
+
+/* Site-wide responsive foundation */
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+main,
+section,
+header,
+footer,
+.container,
+.container-fluid,
+.row,
+.nav-wrapper,
+.newsletter-wrapper,
+.footer-top {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.container,
+.container-fluid {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+span {
+  overflow-wrap: break-word;
+}
+
+table {
+  max-width: 100%;
+}
+
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+}
+
+@media (min-width: 993px) and (max-width: 1366px) {
+  #main-header > .container,
+  .top-bar > .container,
+  footer > .container,
+  .footer-newsletter .container {
+    width: min(100% - 2rem, 74rem);
+    max-width: 74rem;
+    padding-inline: clamp(0.75rem, 1.4vw, 1.25rem);
+  }
+
+  #main-header {
+    height: clamp(5rem, 6.6vw, 5.6rem);
+    min-height: 0;
+  }
+
+  #main-header .nav-wrapper {
+    gap: clamp(0.7rem, 1.3vw, 1.25rem);
+  }
+
+  #main-header .logo {
+    flex: 0 1 8.5rem;
+    min-width: 0;
+    margin-right: 0;
+  }
+
+  #main-header .logo img {
+    width: min(100%, 8.2rem);
+    height: auto;
+    max-height: 2.8rem;
+    object-fit: contain;
+  }
+
+  #main-header .main-nav {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  #main-header .nav-links {
+    justify-content: center;
+    gap: clamp(0.65rem, 1.55vw, 1.35rem);
+  }
+
+  #main-header .nav-link {
+    padding-block: 0.55rem;
+    font-size: clamp(0.64rem, 0.78vw, 0.76rem);
+    letter-spacing: clamp(0.03rem, 0.07vw, 0.06rem);
+    white-space: nowrap;
+  }
+
+  #main-header .nav-actions {
+    flex: 0 0 auto;
+    gap: 0.75rem;
+    margin-left: 0 !important;
+  }
+
+  #main-header .lang-switch {
+    gap: 0.55rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  #main-header .flag-icon {
+    width: clamp(1.15rem, 1.7vw, 1.4rem);
+    height: auto;
+  }
+
+  .about-hero,
+  .resource-hero,
+  .gallery-hero,
+  .media-resource-hero,
+  .technical-hero,
+  .wpc-hero {
+    padding-top: clamp(4rem, 6vw, 5.2rem);
+    padding-bottom: clamp(3.8rem, 5.5vw, 4.8rem);
+  }
+
+  .about-intro,
+  .about-global,
+  .resource-intro,
+  .resource-directory,
+  .gallery-section,
+  .media-resource-content,
+  .technical-content,
+  .wpc-introduction,
+  .wpc-benefits,
+  .wpc-comparison {
+    padding-top: clamp(4rem, 6vw, 5.5rem);
+    padding-bottom: clamp(4rem, 6vw, 5.8rem);
+  }
+
+  footer .footer-newsletter {
+    padding-block: clamp(2rem, 3.5vw, 2.75rem);
+  }
+
+  footer .newsletter-wrapper {
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+  }
+
+  footer .footer-top {
+    grid-template-columns: minmax(13rem, 1.35fr) repeat(3, minmax(8rem, 1fr));
+    gap: clamp(1rem, 2.2vw, 1.75rem);
+    padding-top: clamp(2.5rem, 4vw, 3.4rem);
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1160px) {
+  #main-header .nav-links {
+    gap: 0.65rem;
+  }
+
+  #main-header .nav-link {
+    font-size: 0.63rem;
+  }
+}
+
+@media (max-width: 992px) {
+  #main-header > .container {
+    width: 100%;
+    padding-inline: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  #main-header .nav-wrapper {
+    gap: 1rem;
+  }
+
+  #main-header .nav-actions {
+    margin-left: auto;
+  }
+
+  .newsletter-form,
+  .newsletter-form .input-group {
+    width: min(100%, 28rem);
+  }
+
+  .about-intro-grid,
+  .about-global-grid,
+  .resource-intro-grid,
+  .media-resource-grid,
+  .wpc-intro-grid,
+  .wpc-comparison-grid {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: clamp(0.92rem, 3.7vw, 1rem);
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  h2 {
+    font-size: clamp(1.55rem, 7vw, 2.2rem);
+  }
+
+  .btn,
+  button,
+  input,
+  select,
+  textarea {
+    min-width: 0;
+  }
+
+  .table-responsive,
+  .document-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  footer .container,
+  .footer-newsletter .container {
+    padding-inline: clamp(1rem, 5vw, 1.5rem);
+  }
+
+  .footer-newsletter,
+  .footer-top,
+  .footer-bottom {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #main-header {
+    height: 5.25rem;
+  }
+
+  #main-header .logo {
+    max-width: 8rem;
+  }
+
+  #main-header .lang-switch {
+    gap: 0.4rem;
+    padding: 0.35rem 0.55rem;
+  }
+
+  #main-header .flag-icon {
+    width: 1.2rem;
+  }
+
+  .newsletter-form .input-group {
+    flex-wrap: wrap;
+    border-radius: 1rem;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+  }
+}
